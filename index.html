@@ -9,7 +9,20 @@
         <p>{{ message }}</p>
         <p><input type="text" v-model="message"></p>
         <p>
-          <a v-bind:href="url">Link to Gogle</a>
+          <a v-bind:href="url">Link to Google</a>
+        </p>
+        <h2>Todos</h2>
+        <ul v-if="showTodos">
+          <li v-for="todo in todos">
+            {{ todo.title}}
+          </li>
+        </ul>
+        <p v-else>
+            Not Todos for you today
+        </p>
+        <p>
+          Showing todos or not {{ showTodos }}
+          <input type="checkbox" v-model="showTodos">
         </p>
     </div>
     <script type="text/javascript" src="js/vue.js">
